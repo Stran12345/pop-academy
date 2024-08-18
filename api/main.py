@@ -6,10 +6,6 @@ from backend.yout import yout_search
 from flask_cors import CORS
 from flask_caching import Cache
 from datetime import datetime
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.serving import run_simple
-import serverless_wsgi
-from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
 CORS(app)
@@ -24,6 +20,7 @@ def format_date_to_words(date_string):
         return date_string
 
 @app.route('/process', methods=['POST'])
+
 def process():
     data = request.json
     title = data['song_name']
@@ -93,10 +90,4 @@ def process():
 
     return jsonify(result)
 
-def lambda_handler(event, context):
-    return serverless_wsgi.handle_request(app, event, context)
-
-if __name__ == '__main__':
-    app.wsgi_app = ProxyFix(app.wsgi_app)
-    run_simple('localhost', 5000, app, use_reloader=True)
 
