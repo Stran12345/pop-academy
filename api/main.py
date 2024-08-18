@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
-from release import get_release_date
-from spot import spot_search, extract_first_part
-from last import last_search, list_to_string
-from yout import yout_search
+from backend.release import get_release_date
+from backend.spot import spot_search, extract_first_part
+from backend.last import last_search, list_to_string
+from backend.yout import yout_search
 from flask_cors import CORS
 from flask_caching import Cache
 from datetime import datetime
