@@ -6,6 +6,7 @@ from backend.yout import yout_search
 from flask_cors import CORS
 from flask_caching import Cache
 from datetime import datetime
+import re
 
 app = Flask(__name__)
 CORS(app)
@@ -38,7 +39,8 @@ def process():
     spot_info = spot_search(title, artist)
     last_info=last_search(spot_info['name'],list_to_string(spot_info['artists']))
 
-    if '(\s+Featuring\s+|\s+X\s+|\s+&\s+|\s+with\s+|,\s+)' in artist or '(' in title:
+    pattern = r'( +Featuring +| +X +| +& +| +with +|, +)'
+    if re.search(pattern, artist) or '(' in title:
         song2 = title.split('(')[0]
         artist2 = extract_first_part(artist)
         spot_info2 = spot_search(song2, artist2)
