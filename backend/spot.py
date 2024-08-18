@@ -10,12 +10,8 @@ load_dotenv()
 
 
 def extract_first_part(input_string):
-    # Define a regex pattern to match the separators including "with"
-    pattern = r'(\s+[Ff]eaturing\s+|\s+[Xx]\s+|\s+&\s+|\s+[Ww]ith\s+|\s+[Aa]nd\s+|\s+,\s+)'
-    
-    # Split the string based on the pattern and take the first part
+    pattern = r'( +[Ff]eaturing +| +[Xx] +| +& +| +[Ww]ith +| +[Aa]nd +| +, +)'
     result = re.split(pattern, input_string)[0]
-    
     return result
 
 def list_to_string(listy):
