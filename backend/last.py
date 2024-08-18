@@ -1,9 +1,13 @@
 import requests
 from fuzzywuzzy import fuzz
 
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 # Replace with your Last.fm API key and secret
-API_KEY = 'e358ff78f2ac4e232d7673874073c1fb'
-API_SECRET = '3c644af4cbae45ec7df8434f91bd2a66'
+API_KEY = os.getenv("LAST_key")
+API_SECRET = os.getenv("LAST_secret")
 
 def list_to_string(listy):
     ans=" "

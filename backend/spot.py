@@ -2,8 +2,12 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from fuzzywuzzy import fuzz
 from datetime import datetime
-import babel.dates
 import re
+
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 
 def extract_first_part(input_string):
     # Define a regex pattern to match the separators including "with"
@@ -24,8 +28,8 @@ def list_to_string(listy):
     return ans
 
 # Set up your Spotify credentials
-client_id = '66130a05be214d4386c719ecafcafee9'
-client_secret = 'cbf3568c820c42f1aefa7b102780b7e4'
+client_id = os.getenv("SPOT_id")
+client_secret = os.getenv("SPOT_secret")
 
 # Authenticate with the Spotify API
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)

@@ -2,20 +2,24 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from fuzzywuzzy import fuzz
 
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 # List of API keys
 api_keys = [
-    'AIzaSyD5ejr1Ol545fSRgAECOjtj8-GznjTTdv0',
-    'AIzaSyBNbinY51LczOi3p5-QF75phEy0x6kUqPc',
-    'AIzaSyDIwZ1OidwEtGxNV5Iy08kq0AvjBSyBZDI',
-    'AIzaSyC6I6yDQ9M5Gzp_hRv0PNGns2hECVAiZR0',
-    'AIzaSyBrU-KK3Tq4EAvYkPdb4XAEiguPy5l1lwo',
-    'AIzaSyC4--pK-xnWxP3XbeG1mYMlBbM084S4DDM',
-    'AIzaSyDSmsELdf_0CdXKBfFbJfTg_msAZAwCLYs',
-    'AIzaSyAdkVrg8VilHQOaINS3Tf9XPLPCduED2yg',
-    'AIzaSyCuy5Gj4aFhElnZiOdpw1VV8G8kA2tCaFk',
-    'AIzaSyBT9fj4JNVHdtl-RvHJe29IRngKPiMRdcM',
-    'AIzaSyC_8gnUDNv5WB3GOyyVYDSdq-pc_SZWD8g',
-    'AIzaSyDMtVrB5jkBekGVzmuwfpLp8DhwQ4cw0Yc'
+    os.getenv("YOUT_secret1"), 
+    os.getenv("YOUT_secret2"), 
+    os.getenv("YOUT_secret3"), 
+    os.getenv("YOUT_secret4"), 
+    os.getenv("YOUT_secret5"), 
+    os.getenv("YOUT_secret6"), 
+    os.getenv("YOUT_secret7"), 
+    os.getenv("YOUT_secret8"), 
+    os.getenv("YOUT_secret9"),
+    os.getenv("YOUT_secret10"), 
+    os.getenv("YOUT_secret11"), 
+    os.getenv("YOUT_secret12")
 ]
 
 def yout_search(song, artist):
