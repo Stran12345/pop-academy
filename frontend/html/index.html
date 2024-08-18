@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pop Academy</title>
+    <link rel="icon" type="image/x-icon" href="../media/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/home-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light"
+      style="font-size: x-large; margin-bottom: 5vh"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" style="font-size: xx-large">Pop Academy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="reportcard.html">Report Cards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="talentshow.html">Talent Show</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Guide -->
+    <div class="grid-container">
+      <div class="container">
+        <h1>Hello there!</h1>
+        <p style="font-size: x-large">
+          Welcome to Pop Academy! <br />
+          Dive into the data behind your favorite songs. To learn about each tool, click the buttons
+          below.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <div class="container">
+        <h1>Report Card</h1>
+        <p style="font-size: x-large">
+          Use the above navigation bar to access the report card tool. Click the button below for a
+          guide on how to use the report card!
+        </p>
+        <button type="button" id="button1" class="btn btn-secondary" style="font-size: x-large">
+          Guide
+        </button>
+      </div>
+      <div class="container">
+        <h1>Talent Show</h1>
+        <p style="font-size: x-large">
+          Use the above navigation bar to access the talent show tool. Click the button below for a
+          guide on how to use the talent show!
+        </p>
+        <button type="button" id="button2" class="btn btn-secondary" style="font-size: x-large">
+          Guide
+        </button>
+      </div>
+    </div>
+
+    <!--Modal 1-->
+    <div
+      class="modal fade modal-lg"
+      id="ModalOne"
+      tabindex="-1"
+      aria-hidden="true"
+      style="font-size: large"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content overflow-auto">
+          <div class="modal-header">
+            <h2 class="modal-title" style="margin-left: 1vw; color: black">
+              FAQs about Report Card
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingZero">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseZero"
+                    aria-expanded="false"
+                    aria-controls="collapseZero"
+                  >
+                    What does the Report Card tool do?
+                  </button>
+                </h2>
+                <div
+                  id="collapseZero"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingZero"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    The Report Card tool on Pop Academy allows users to input a song of their
+                    choice. The user will get a detailed report that includes the song's basic
+                    information, streaming links, and popularity and audio metrics! As of right now,
+                    Pop Academy collects data from Spotify, Last.fm, and Youtube.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="false"
+                    aria-controls="collapseOne"
+                  >
+                    How cautious of spelling do I have to be when typing in the song/artist name?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Spelling is important but not critical. We use fuzzy matching to handle slight
+                    misspellings, and as long as your input is reasonably close to the song/artist
+                    name, it should work. We have a minimum threshold of 80% similarity, so small
+                    errors or typos are usually accommodated.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    If a song has a feature on it, do I have to type in '(feat... )' or anything of
+                    that matter?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">No, you don't! The song name alone will suffice.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    If a song has multiple artists, do I have to type out all of their names?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    No you don't! In fact, you can even leave out one of the artist's last names
+                    (when applicable). If you insist on having multiple artists, make sure to
+                    seperate them with a comma, ampersand, or the word 'and'!
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    Can I search up remixes and live versions of songs?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    It depends on the remix or the live version of the song. If the name of the song
+                    is too similar to the remix/live name of the song, the algorith may not pick up
+                    the remix/live song. To increase your chances, go onto Spotify and copy the
+                    exact name of the remix/live version of the song!
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    What does it look like when a song cannot be found?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    If a song cannot be found on a platform, the metrics for that specific platform
+                    will return as -1. If Spotify API cannot find the song you're searching for, the
+                    song name will return as 'not found'.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix"
+                    aria-expanded="false"
+                    aria-controls="collapseSix"
+                  >
+                    What about Taylor's Version?
+                  </button>
+                </h2>
+                <div
+                  id="collapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSix"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Unfortunately, as of now, there is no way to distinguish between the original
+                    and Taylor's version. The searching algorithm will simply give you the song or
+                    music video that is more popular.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTen">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSeven"
+                    aria-expanded="false"
+                    aria-controls="collapseSeven"
+                  >
+                    Why do the all of the Youtube metrics keep showing up as -1
+                  </button>
+                </h2>
+                <div
+                  id="collapseSeven"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSeven"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Youtube Data API has quotas for how many times a day we can request information.
+                    If you repeatedly try different songs and keep getting -1 as a result for
+                    Youtube metrics, you may have to try again tomorrow. NOTE: if it's just comments
+                    and/or likes that return as -1, that means the creator of the music video
+                    blocked like count and/or comments
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal 2-->
+    <div
+      class="modal fade modal-lg"
+      id="ModalTwo"
+      tabindex="-1"
+      aria-hidden="true"
+      style="font-size: large"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content overflow-auto">
+          <div class="modal-header">
+            <h2 class="modal-title" style="margin-left: 1vw; color: black">
+              FAQs about Talent Show
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="accordion" id="accordionExample2">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTen">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTen"
+                    aria-expanded="false"
+                    aria-controls="collapseTen"
+                  >
+                    What does the Talent Show tool do?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTen"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTen"
+                  data-bs-parent="#accordionExample2"
+                >
+                  <div class="accordion-body">
+                    The Talent Show tool on Pop Academy allows users to input up to 12 different
+                    songs and compare them based on their popularity metrics. Using the Talent Show
+                    tool, you can see how the songs compare based on a single popularity metric.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseEight"
+                    aria-expanded="false"
+                    aria-controls="collapseEight"
+                  >
+                    What are the guidelines for entering in the song and artist name?
+                  </button>
+                </h2>
+                <div
+                  id="collapseEight"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingEight"
+                  data-bs-parent="#accordionExample2"
+                >
+                  <div class="accordion-body">
+                    Same guidelines as those for the Report Card tool. Feel free to check those out
+                    on the home page!
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNine">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseNine"
+                    aria-expanded="false"
+                    aria-controls="collapseNine"
+                  >
+                    How do I compare tracks by a single metric?
+                  </button>
+                </h2>
+                <div
+                  id="collapseNine"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingNine"
+                  data-bs-parent="#accordionExample2"
+                >
+                  <div class="accordion-body">
+                    When the report shows up, you can sort the songs by a metric of your choice by
+                    clicking on the metric name. Then, the songs will sort accordingly with respect
+                    to the chosen metric.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white text-center text-lg-start" style="background-color: lightgrey">
+      <div class="container p-4"></div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: large">
+        2024 Pop Academy.
+        <ul class="list-unstyled">
+          <li><a href="image_sources.html" class="text-white">Image Sources</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/steven-tran-2197a7218/"
+              class="text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+              >My LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="../js/home-script.js"></script>
+  </body>
+</html>

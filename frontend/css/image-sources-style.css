@@ -1,0 +1,34 @@
+body {
+  background-color: white;
+  font-family: 'Comic Neue', sans-serif !important;
+  font-weight: 700;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  border: 0.25rem black solid;
+  border-radius: 3%;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: lightcyan;
+  color: black;
+}

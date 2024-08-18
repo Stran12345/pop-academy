@@ -1,0 +1,57 @@
+body {
+  background-color: white;
+  font-family: 'Comic Neue', sans-serif !important;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+.grid-container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  overflow: visible;
+}
+
+.grid-container .container {
+  padding: 5%;
+  margin-bottom: 3rem;
+  border-radius: 3%;
+  width: 30rem;
+  height: 25rem;
+  background-image: url('../media/chalkboard.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.accordion-button {
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  padding: 0.75rem;
+  font-size: large;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #333;
+  background-color: #b6cee7;
+  border-color: #ddd;
+}
+
+.accordion-body {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
