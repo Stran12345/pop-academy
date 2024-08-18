@@ -97,5 +97,6 @@ def lambda_handler(event, context):
     return serverless_wsgi.handle_request(app, event, context)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.wsgi_app = ProxyFix(app.wsgi_app)
+    run_simple('localhost', 5000, app, use_reloader=True)
 
