@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const song_name = document.getElementById('song_input').value;
     const artist_name = document.getElementById('artist_input').value;
 
-    fetch('https://popacademy-broq2hqh2-stevens-projects-7f537890.vercel.app/api/process', {
+    fetch('https://popacademy-stevens-projects-7f537890.vercel.app/api/process', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
