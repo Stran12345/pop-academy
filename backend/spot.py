@@ -114,3 +114,5 @@ def spot_search(song_name,artist_name):
 
         }
         return track_info
+
+print(spot_search("diet pepsi", "addison rae"))
