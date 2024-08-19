@@ -20,7 +20,7 @@ def format_date_to_words(date_string):
     except ValueError:
         return date_string
 
-@app.route('/process', methods=['POST'])
+@app.route('/api/process', methods=['POST'])
 
 def process():
     data = request.json
