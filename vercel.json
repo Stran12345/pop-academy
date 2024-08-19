@@ -7,12 +7,24 @@
     {
       "src": "frontend/html/**/*",
       "use": "@vercel/static"
+    },
+    {
+      "src": "frontend/css/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "frontend/javascript/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "api/main.py"
+    },
+    {
+      "src": "/(css|javascript)/(.*)",
+      "dest": "/frontend/$1/$2"
     },
     {
       "src": "/(.*)",
