@@ -190,13 +190,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const song_name = document.getElementById(`song${i}_input`).value;
       const artist_name = document.getElementById(`artist${i}_input`).value;
 
-      let fetchPromise = fetch('http://127.0.0.1:5000/process', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      let fetchPromise = fetch(
+        'https://popacademy-broq2hqh2-stevens-projects-7f537890.vercel.app/process',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ song_name, artist_name }),
         },
-        body: JSON.stringify({ song_name, artist_name }),
-      })
+      )
         .then(response => response.json())
         .then(data => {
           basic.rows.push([data.picy, data.titley, data.artisty, data.release_datey]);
