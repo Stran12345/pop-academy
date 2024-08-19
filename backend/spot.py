@@ -24,8 +24,8 @@ def list_to_string(listy):
     return ans
 
 # Set up your Spotify credentials
-client_id = os.getenv("SPOT_id")
-client_secret = os.getenv("SPOT_secret")
+client_id = os.getenv("SPOTIPY_CLIENT_ID")
+client_secret = os.getenv("SPOTIPY_CLIENT_SECRET")
 
 # Authenticate with the Spotify API
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
