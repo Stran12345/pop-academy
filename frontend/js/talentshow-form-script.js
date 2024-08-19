@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const artist_name = document.getElementById(`artist${i}_input`).value;
 
       let fetchPromise = fetch(
-        'https://popacademy-broq2hqh2-stevens-projects-7f537890.vercel.app/process',
+        'https://popacademy-broq2hqh2-stevens-projects-7f537890.vercel.app/api/process',
         {
           method: 'POST',
           headers: {
