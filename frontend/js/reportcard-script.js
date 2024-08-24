@@ -36,6 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
+  function formatNumberWithCommas(numberStr) {
+    let number = parseFloat(numberStr);
+    if (isNaN(number)) {
+      return 'Invalid number';
+    }
+    return number.toLocaleString();
+  }
+
   songForm.addEventListener('submit', function (event) {
     event.preventDefault();
     loadingGif.style.display = 'flex';
@@ -78,8 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
         valenceResult.textContent = `${data.valencey}`;
         tempoResult.textContent = `${data.tempoy}`;
         spot_tagsResult.textContent = `${data.spot_tagsy}`;
-        listenersResult.textContent = `${data.listenersy}`;
-        playcountResult.textContent = `${data.playcounty}`;
+        listenersResult.textContent = formatNumberWithCommas(data.listenersy);
+        playcountResult.textContent = formatNumberWithCommas(data.playcounty);
         last_tagsResult.textContent = `${data.last_tagsy}`;
 
         const link2 = document.createElement('a');
@@ -96,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function () {
         last_urlResult.innerHTML = '';
         last_urlResult.appendChild(link3);
 
-        commentsResult.textContent = `${data.commentsy}`;
-        likesResult.textContent = `${data.likesy}`;
-        viewsResult.textContent = `${data.viewsy}`;
+        commentsResult.textContent = formatNumberWithCommas(data.commentsy);
+        likesResult.textContent = formatNumberWithCommas(data.likesy);
+        viewsResult.textContent = formatNumberWithCommas(data.viewsy);
         loadingGif.style.display = 'none';
         formPic.style.display = 'flex';
         songForm.style.display = 'block';
