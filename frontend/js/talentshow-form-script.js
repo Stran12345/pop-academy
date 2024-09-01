@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         comparison = cellA.localeCompare(cellB);
       }
-      return isAscending ? -comparison : comparison;
+      return isAscending ? comparison : -comparison;
     });
 
     rows.forEach(row => tbody.appendChild(row));
