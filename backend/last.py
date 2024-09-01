@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-# Replace with your Last.fm API key and secret
 API_KEY = os.getenv("LAST_key")
 API_SECRET = os.getenv("LAST_secret")
 
@@ -27,7 +26,7 @@ def last_search(song_name, artist_name):
             'track': song_name,
             'api_key': API_KEY,
             'format': 'json',
-            'limit': 10  # Limit the number of results to process
+            'limit': 10  
         }
         if artist_name:
             params['artist'] = artist_name
