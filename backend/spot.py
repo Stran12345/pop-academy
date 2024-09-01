@@ -23,11 +23,9 @@ def list_to_string(listy):
             ans = ans + ", " + listy[idx]
     return ans
 
-# Set up your Spotify credentials
 client_id = os.getenv("SPOTIPY_CLIENT_ID")
 client_secret = os.getenv("SPOTIPY_CLIENT_SECRET")
 
-# Authenticate with the Spotify API
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
@@ -55,7 +53,6 @@ def spot_search(song_name,artist_name):
         track = best_match
         track_id = track['id']
         
-        # Get track details
         track_info = {
             'name': track['name'],
             'album': track['album']['name'],
@@ -66,7 +63,6 @@ def spot_search(song_name,artist_name):
             'spotify_url': track['external_urls']['spotify']
         }
         
-        # Get audio features
         audio_features = sp.audio_features(track_id)[0]
         if audio_features:
             track_info.update({
@@ -81,7 +77,6 @@ def spot_search(song_name,artist_name):
                 'tempo': float(audio_features['tempo'])
             })
         
-        # Get artist details to fetch genres
         artist_id = track['artists'][0]['id']
         artist_info = sp.artist(artist_id)
         tags = artist_info.get('genres', [])
@@ -114,5 +109,3 @@ def spot_search(song_name,artist_name):
 
         }
         return track_info
-
-print(spot_search("diet pepsi", "addison rae"))
