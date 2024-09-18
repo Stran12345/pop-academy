@@ -39,10 +39,10 @@ def spot_search(song_name,artist_name):
         track_name = track['name']
         artists_names=list_to_string([artist['name'] for artist in track['artists']])
 
-        if '-' in song_name or '(' in song_name:
+        if '-' in song_name or '(' in song_name or '[' in song_name:
             similarity_song= fuzz.ratio(track_name.lower(), song_name.lower())
         else:
-            similarity_song= fuzz.ratio(track_name.lower().split('(')[0].split('-')[0], song_name.lower())
+            similarity_song= fuzz.ratio(track_name.lower().split('(')[0].split('-').split('[')[0], song_name.lower())
         similarity_artist= fuzz.partial_ratio(extract_first_part(artist_name.lower()), artists_names.lower())
         if similarity_song> 80 and similarity_artist > 70:  
             if track['popularity'] > highest_popularity:
