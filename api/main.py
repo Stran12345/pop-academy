@@ -38,21 +38,6 @@ def process():
 
     spot_info = spot_search(title, artist)
     last_info=last_search(spot_info['name'],list_to_string(spot_info['artists']))
-
-    pattern = r'( +Featuring +| +X +| +& +| +with +|, +)'
-    if re.search(pattern, artist) or '(' in title:
-        song2 = title.split('(')[0]
-        artist2 = extract_first_part(artist)
-        spot_info2 = spot_search(song2, artist2)
-        last_info2=last_search(spot_info2['name'],list_to_string(spot_info2['artists']))
-
-        if last_info2['playcount'] > last_info['playcount']:
-            last_info = last_info2
-
-        if spot_info2['popularity'] > spot_info['popularity']:
-            spot_info = spot_info2
-    
-
     yout_info=yout_search(spot_info['name'],list_to_string(spot_info['artists']))
 
     real_release=""
