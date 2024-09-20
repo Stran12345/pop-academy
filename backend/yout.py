@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-# List of API keys
 api_keys = [
     os.getenv("YOUT_secret1"), 
     os.getenv("YOUT_secret2"), 
@@ -38,7 +37,7 @@ def yout_search(song, artist):
         search_response = youtube.search().list(
             q=song_artist,
             part='id,snippet',
-            maxResults=5,
+            maxResults=3,
             type='video'
         ).execute()
 
