@@ -63,19 +63,6 @@ def spot_search(song_name,artist_name):
             'spotify_url': track['external_urls']['spotify']
         }
         
-        audio_features = sp.audio_features(track_id)[0]
-        if audio_features:
-            track_info.update({
-                'danceability': float(audio_features['danceability']),
-                'energy': float(audio_features['energy']),
-                'loudness': float(audio_features['loudness']),
-                'speechiness': float(audio_features['speechiness']),
-                'acousticness': float(audio_features['acousticness']),
-                'instrumentalness': float(audio_features['instrumentalness']),
-                'liveness': float(audio_features['liveness']),
-                'valence': float(audio_features['valence']),
-                'tempo': float(audio_features['tempo'])
-            })
         
         artist_id = track['artists'][0]['id']
         artist_info = sp.artist(artist_id)
@@ -93,19 +80,8 @@ def spot_search(song_name,artist_name):
             'album': "not found",
             'artists': "not found",
             'release_date': '1800-01-01',
-            'popularity': -1,
-            'danceability': -1,
-            'energy': -1,
-            'loudness': -1,
-            'speechiness': -1,
-            'acousticness': -1,
-            'instrumentalness': -1,
-            'liveness': -1,
-            'valence': -1,
-            'tempo': -1,
             'image_url': 'https://img.freepik.com/free-vector/sad-emoji_53876-25516.jpg?t=st=1723746821~exp=1723750421~hmac=4977a4f5444e3a4b3d9613db676ef042f74483c95265fa937afc3434207b7bb8&w=1800',
             'spotify_url': 'https://open.spotify.com/',
             'genres':'none'
-
         }
         return track_info

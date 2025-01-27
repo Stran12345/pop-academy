@@ -112,3 +112,4 @@ def last_search(song_name, artist_name):
             "last_url": 'https://www.last.fm/home'
         }
         return track_info
+

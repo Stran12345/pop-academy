@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   let currentPage = 1;
-  const totalPages = 3;
+  const totalPages = 2;
   const loadingGif = document.getElementById('loading');
   const loadingWrapper = document.getElementById('loading-wrapper');
   const formPic = document.getElementById('folderForm');
@@ -11,15 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const pictureResult = document.getElementById('pictureResult');
   const release_dateResult = document.getElementById('release_dateResult');
   const popularityResult = document.getElementById('popularityResult');
-  const danceabilityResult = document.getElementById('danceabilityResult');
-  const energyResult = document.getElementById('energyResult');
-  const loudnessResult = document.getElementById('loudnessResult');
-  const speechinessResult = document.getElementById('speechinessResult');
-  const acousticnessResult = document.getElementById('acousticnessResult');
-  const instrumentalnessResult = document.getElementById('instrumentalnessResult');
-  const livenessResult = document.getElementById('livenessResult');
-  const valenceResult = document.getElementById('valenceResult');
-  const tempoResult = document.getElementById('tempoResult');
   const spot_tagsResult = document.getElementById('spot_tagsResult');
   const last_urlResult = document.getElementById('last_urlResult');
   const listenersResult = document.getElementById('listenersResult');
@@ -76,15 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
         spotify_urlResult.appendChild(link);
 
         popularityResult.textContent = ` ${data.popularityy}`;
-        danceabilityResult.textContent = `${data.danceabilityy}`;
-        energyResult.textContent = `${data.energyy}`;
-        loudnessResult.textContent = `${data.loudnessy}`;
-        speechinessResult.textContent = `${data.speechinessy}`;
-        acousticnessResult.textContent = `${data.acousticnessy}`;
-        instrumentalnessResult.textContent = `${data.instrumentalnessy}`;
-        livenessResult.textContent = `${data.livenessy}`;
-        valenceResult.textContent = `${data.valencey}`;
-        tempoResult.textContent = `${data.tempoy}`;
         spot_tagsResult.textContent = `${data.spot_tagsy}`;
         listenersResult.textContent = formatNumberWithCommas(data.listenersy);
         playcountResult.textContent = formatNumberWithCommas(data.playcounty);
@@ -117,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loadingGif.style.display = 'none';
         formPic.style.display = "url('folder.png')";
         songForm.style.display = 'block';
+        $('#resultModal').modal('show');
       });
   });
 

@@ -26,8 +26,6 @@ def process():
     data = request.json
     title = data['song_name']
     artist = data['artist_name']
-    
-    song_artist=title + " " + artist
 
     cache_key = f'{title}_{artist}'
 
@@ -52,16 +50,6 @@ def process():
         "picy": spot_info['image_url'],
         "spotify_urly": spot_info['spotify_url'],
         "release_datey": format_date_to_words(real_release),
-        "popularityy": spot_info['popularity'],
-        "danceabilityy": spot_info['danceability'],
-        "energyy": spot_info['energy'],
-        "loudnessy": spot_info['loudness'],
-        "speechinessy": spot_info['speechiness'],
-        "acousticnessy": spot_info['acousticness'],
-        "instrumentalnessy": spot_info['instrumentalness'],
-        "livenessy": spot_info['liveness'],
-        "valencey": spot_info['valence'],
-        "tempoy": spot_info['tempo'],
         "spot_tagsy": spot_info['genres'],
         "listenersy": last_info['listeners'],
         "playcounty": last_info['playcount'],
