@@ -85,3 +85,5 @@ def spot_search(song_name,artist_name):
             'genres':'none'
         }
         return track_info
+
+print(spot_search("fortnight", "taylor"))

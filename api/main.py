@@ -48,6 +48,7 @@ def process():
         "titley": spot_info['name'],
         "artisty": list_to_string(spot_info['artists']),
         "picy": spot_info['image_url'],
+        "popularityy": spot_info['popularity'],
         "spotify_urly": spot_info['spotify_url'],
         "release_datey": format_date_to_words(real_release),
         "spot_tagsy": spot_info['genres'],
